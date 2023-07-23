@@ -131,7 +131,6 @@ LOGOUT_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_AUTO_SIGNUP = False
 
-# SOCIALACCOUNT_ADAPTER = 'galaryapp.adapters.GoogleAccountAdapter'
 
 STATIC_URL = 'static/'
 
@@ -153,6 +152,11 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
+        'APP': {
+            'client_id': '453456177671-30n48o9eid6jgmqhb08k59scmc6phif1.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        },
         'SCOPE': [
             'profile',
             'email',
