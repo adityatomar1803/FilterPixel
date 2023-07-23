@@ -1,0 +1,45 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+
+<body>
+    <header class="header">
+        <img src="{% static 'img/filter-pixel-logo.svg' %}" alt="logo">
+        <h2 class="orgname">FilterPixel</h2>
+        <button class="sign-in--button button-primary">Sign Up</button>
+    </header>
+    <div class="main-content">
+        <div class="login-part">
+            <form id="google-login-form" action="{% provider_login_url 'google' %}" method="post">
+                {% csrf_token %}
+                <button class="google-login" type="submit">
+                    <img src="{% static 'img/google-icon.svg' %}" alt="google icon">
+                    Login with Google
+                </button>
+            </form>
+
+            <div class="line">
+                <div><hr></div>
+                <span>OR</span>
+                <div><hr></div>
+            </div>
+            <form action="/" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <button type="submit" class="button-primary submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

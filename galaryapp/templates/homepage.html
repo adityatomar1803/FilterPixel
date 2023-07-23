@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <img src="{% static 'img/filter-pixel-logo.svg' %}" alt="logo">
+        <h2 class="orgname">FilterPixel</h2>
+        <h4 class="greetings">Hi!, {{user.username}}</h4>
+        <a href="{% url 'logout' %}" class="button button-danger">Logout</a>
+        <img src="{% static 'img/profile-pic.png' %}" alt="Profile Pic" class="propic">
+    </header>
+    <div class="main-content">
+        <div class="button-group">
+            <button class="button active-button">S3</button>
+            <button class="button inactive-button">Google Drive</button>
+        </div>
+
+        <div class="image-group">
+            <div class="s3-image--group">
+                {% for image in image_list_s3 %}
+                    <img src="{{image}}" alt="Image">
+                {% endfor %}
+            </div>
+            <div class="drive-image--group d-none">
+                {% for image in image_list_drive %}
+                    <img src="{{image}}" alt="Image">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.querySelector('.button-group').addEventListener('click', function(e){
+        if(e.target.tagName == 'BUTTON'){
+
+            // for button display
+            let activeButton = document.querySelector('.main-content button.active-button');
+            activeButton.classList.toggle('active-button');
+            activeButton.classList.toggle('inactive-button');
+
+            e.target.classList.toggle('inactive-button');
+            e.target.classList.toggle('active-button');
+
+            // for images based on the button clicked
+            if(e.target.innerText.startsWith('S')){
+                if(document.querySelector('.s3-image--group').classList.contains('d-none')){
+                    document.querySelector('.s3-image--group').classList.remove('d-none');
+                    document.querySelector('.drive-image--group').classList.add('d-none');
+                }
+            }
+            else{
+                if(document.querySelector('.drive-image--group').classList.contains('d-none')){
+                    document.querySelector('.s3-image--group').classList.add('d-none');
+                    document.querySelector('.drive-image--group').classList.remove('d-none');
+                }
+            }
+            loadData('special');
+
+        }
+    })
+
+    let isLoading = false;
+
+    function loadData(s) {
+        if (isLoading && !s) return;
+        isLoading = true;
+
+        let id = document.querySelector('.button-group>button.active-button').innerText.startsWith('S')?0:1;
+        let tar = document.querySelector('.image-group>div:not(.d-none)')
+
+        let page = tar.childElementCount;
+
+        if(requestNeeded(page, id)){
+
+            fetch(`/get_data/${id}/${page}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        let img = document.createElement('img');
+                        img.src = item;
+                        img.alt = 'image'
+
+                        tar.appendChild(img);
+                    });
+
+
+                })
+                .then(()=>isLoading = false)
+                .catch(error => console.error('Error fetching data:', error));
+        }
+    }
+
+    function requestNeeded(page, id){
+        if((!id && page == '{{s3_image_len}}') || (id && page == '{{drive_image_len}}'))return false;
+        else return true;
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('running');
+
+        window.addEventListener('scroll', function () {
+            loadData();
+        });
+
+        // Initial load
+        loadData();
+    });
+
+</script>
+
+</html>
