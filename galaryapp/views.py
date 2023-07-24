@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView
 from django.views.generic import RedirectView, TemplateView
@@ -11,6 +10,11 @@ import boto3
 from botocore import UNSIGNED
 from botocore.config import Config
 import os
+
+
+from django.contrib.auth.views import LoginView
+
+
 
 
 image_urls_s3 = []

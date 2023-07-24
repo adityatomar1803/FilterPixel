@@ -30,7 +30,7 @@ local_settings.py
 
 # Media and static files (if uploaded by users)
 media/
-static/
+/static/
 
 # Compiled translations
 locale/
@@ -63,14 +63,6 @@ htmlcov/
 # Ignore node_modules and yarn.lock
 node_modules/
 yarn.lock
-
-# Ignore compiled CSS and JavaScript files
-*.css
-*.min.css
-*.map.css
-*.js
-*.min.js
-*.map.js
 
 # Ignore Django collectstatic directory
 collectstatic/

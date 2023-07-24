@@ -1,0 +1,111 @@
+
+  :root {
+    --main-background-color: #1B1B1B;
+    --main-text-color: white;
+    --button-padding: 12px 24px;
+    --button-border-radius: 10px;
+    --button-font-weight: 700;
+    --button-font-size: 1rem;
+    --primary-button-color: #27EECB;
+    --secondary-button-color: #12D2D2;
+    --button-shadow: 0px 7px 20px 0px #1EE2CE40;
+    --danger-button-color: #C95252;
+    --button-primary-text-color: #022B28;
+  }
+
+  body {
+    background: var(--main-background-color);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--main-text-color);
+    padding: 1rem 1.5rem;
+  }
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  button, .button {
+    border: none;
+    box-shadow: none;
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    font-weight: var(--button-font-weight);
+    font-size: var(--button-font-size);
+    cursor: pointer;
+    background: white;
+  }
+
+  button.submit-button {
+    background: linear-gradient(97.51deg, var(--primary-button-color) 9.75%, var(--secondary-button-color) 92.45%) !important;
+    color: black;
+    box-shadow: var(--button-shadow);
+  }
+
+  .button-danger {
+    background: var(--danger-button-color);
+    color: white;
+  }
+
+  button.button-primary {
+    background: white;
+    color: var(--button-primary-text-color);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+  }
+
+  .orgname {
+    margin-left: 0.5rem;
+  }
+
+
+/* body{
+    background: #1B1B1B;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button, .button{
+    border: none;
+    box-shadow: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    background: white;
+}
+button.submit-button{
+    background: linear-gradient(97.51deg, #27EECB 9.75%, #12D2D2 92.45%) !important;
+    color: black;
+    box-shadow: 0px 7px 20px 0px #1EE2CE40;
+}
+.button-danger{
+    background: #C95252;
+    color: white;
+}
+
+button.button-primary{
+    background: white;
+    color: #022B28;
+}
+header{
+    display: flex;
+    align-items: center;
+}
+.orgname{
+    margin-left: 0.5rem;
+} */

@@ -1,0 +1,159 @@
+/* Base Styles - Reusing Variables */
+:root {
+    --main-background-color: #1B1B1B;
+    --main-text-color: white;
+    --button-padding: 12px 24px;
+    --button-border-radius: 10px;
+    --button-font-weight: 700;
+    --button-font-size: 1rem;
+    --primary-button-color: #27EECB;
+    --secondary-button-color: #12D2D2;
+    --button-shadow: 0px 7px 20px 0px #1EE2CE40;
+    --danger-button-color: #C95252;
+    --button-primary-text-color: #022B28;
+  }
+
+  /* Current Page Styles - Styled Over Base Styles */
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  header button {
+    margin-left: auto;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+  }
+
+  button.google-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    background: var(--danger-button-color); /* Reusing the variable */
+    color: var(--main-text-color); /* Reusing the variable */
+    border: none;
+    padding: var(--button-padding); /* Reusing the variable */
+    border-radius: var(--button-border-radius); /* Reusing the variable */
+    font-weight: var(--button-font-weight); /* Reusing the variable */
+    text-decoration: none;
+  }
+
+  button.google-login img {
+    margin-right: 0.5rem;
+    height: 30px;
+  }
+
+  .login-part {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .line {
+    display: flex;
+    align-items: center;
+  }
+
+  .line > div {
+    flex: 1;
+  }
+
+  .line > span {
+    margin: 0 1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  form > input {
+    padding: 0.8rem;
+    background: white; /* Reusing the variable */
+    border-radius: 8px; /* Reusing the variable */
+    border: none;
+    font-size: 1rem; /* Reusing the variable */
+    text-align: center;
+  }
+
+  button.button-primary[type='submit'] {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+/* body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+header button{
+    margin-left: auto;
+}
+.main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+button.google-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    background: #C95252;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+}
+button.google-login img{
+    margin-right: 0.5rem;
+    height: 30px;
+}
+.login-part{
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.line{
+    display: flex;
+    align-items: center;
+}
+.line>div{
+    flex: 1;
+}
+.line>span{
+    margin: 0 1rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+form>input{
+    padding: 0.8rem;
+    background: white !important;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+}
+button.button-primary[type='submit']{
+    width: fit-content;
+    margin: 0 auto;
+} */

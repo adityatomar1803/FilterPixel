@@ -1,0 +1,141 @@
+/* Base Styles - Reusing Variables */
+:root {
+    --main-background-color: #1B1B1B;
+    --main-text-color: white;
+    --button-padding: 12px 24px;
+    --button-border-radius: 10px;
+    --button-font-weight: 700;
+    --button-font-size: 1rem;
+    --primary-button-color: #27EECB;
+    --secondary-button-color: #12D2D2;
+    --button-shadow: 0px 7px 20px 0px #1EE2CE40;
+    --danger-button-color: #C95252;
+    --button-primary-text-color: #022B28;
+  }
+
+  /* Current Page Styles - Styled Over Base Styles */
+  header .greetings {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  .propic {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1rem;
+  }
+
+  a.button-danger {
+    text-decoration: none;
+  }
+
+  .main-content img {
+    height: 200px;
+    width: 350px;
+    object-fit: cover;
+    padding: 8px;
+    background: #2E2E2E;
+    border-radius: 5px;
+  }
+
+  .main-content {
+    padding: 2rem 5rem;
+  }
+
+  .main-content .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid white;
+  }
+
+  .main-content button {
+    flex: 1;
+  }
+
+  .main-content button.active-button {
+    border-radius: 0;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+  }
+
+  .main-content button.inactive-button {
+    border-radius: 0;
+    background: none;
+    color: white;
+  }
+
+  .d-none {
+    display: none !important;
+  }
+
+  .image-group {
+    margin-top: 2rem;
+  }
+
+  .image-group > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 2rem;
+  }
+
+
+/* header .greetings{
+    margin-left: auto;
+    margin-right: 1rem;
+}
+.propic{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1rem;
+}
+a.button-danger{
+    text-decoration: none;
+}
+.main-content img{
+    height: 200px;
+    width: 350px;
+    object-fit: cover;
+    padding: 8px;
+    background: #2E2E2E;
+    border-radius: 5px;
+}
+.main-content{
+    padding: 2rem 5rem;
+}
+.main-content .button-group{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid white;
+}
+.main-content button{
+    flex: 1;
+}
+.main-content button.active-button{
+    border-radius: 0;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+.main-content button.inactive-button{
+    border-radius: 0;
+    background: none;
+    color: white;
+}
+.d-none{
+    display: none !important;
+}
+.image-group{
+    margin-top: 2rem;
+}
+.image-group>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 2rem;
+} */
