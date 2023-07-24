@@ -5,8 +5,9 @@ Tips to get started:
 
 1. Clone the project
 2. (optional) Install virtual env and activate it.
-3. Install all the dependencies specified in the `requirements.txt` file
-4. Start the server
+3. Install all the dependencies specified in the `requirements.txt` file.
+4. migrate the database
+5. Start the server
 
 Note::: I have purposely kept all my secrets exposed for your convenience. You do not need to enter any of your own api credentials for 
 testing this app.
